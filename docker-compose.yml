@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  todo-app:
+    build: .
+    container_name: todo-app
+    image: todo-app:latest
+    expose:
+    - 3000
+    env_file:
+    - .env
+    depends_on:
+    - mongo
+    restart: always
+  
+  mongo:
+    image: mongo:8.0
+    container_name: mongodb
+    expose:
+    - 27017
+    volumes:
+    - mongo-data:/data/db
+    restart: always
+
+  reverse_proxy:
+    image: nginx:alpine
+    container_name: nginx
+    volumes:
+      - ./nginx/conf.d/nginx.conf:/etc/nginx/conf.d/nginx.conf
+      - ./nginx/certs:/etc/nginx/certs:ro
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - todo-app
+    networks:
+      - app-network
+    restart: always
+
+volumes:
+  mongo-data:
+
+networks:
+  app-network:
+    driver: bridge
