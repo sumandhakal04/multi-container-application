@@ -1,6 +1,16 @@
 # Node modules
 node_modules/
 
+## Terraform
+# Local .terraform directories
+.terraform/
+*.tfvars
+.terraform*
+
+# Terraform state files
+*.tfstate
+*.tfstate.*
+
 ## package-lock
 package-lock.json
 
