@@ -3,6 +3,9 @@
 
 This repository demonstrates a multi-container Docker Compose setup where an application is exposed securely via a reverse proxy using host-installed SSL certificates.
 
+[GitHub Repository](https://github.com/sumandhakal04/multi-container-application)
+
+
 ---
 
 ## 🚀 Project Overview
