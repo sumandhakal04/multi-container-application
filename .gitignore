@@ -4,6 +4,8 @@ node_modules/
 ## Terraform
 # Local .terraform directories
 .terraform/
+*.tfvars
+.terraform*
 
 # Terraform state files
 *.tfstate
