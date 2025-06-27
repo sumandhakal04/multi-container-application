@@ -56,7 +56,7 @@ variable "azurerm_sg_rule" {
 variable "azurerm_public_ip_name" {
   description = "Name of the public IP"
   type        = string
-  
+
 }
 
 variable "admin_username" {
@@ -87,16 +87,16 @@ variable "azurerm_vm_nic_name" {
 
 variable "vnet_enable_public_ip" {
   description = "Flag for public IP on the vnet"
-  type = bool
+  type        = bool
 }
 
 variable "source_image_reference" {
   description = "Information on source Image"
   type = object({
     publisher = string
-    offer = string
-    sku = string
-    version = string
+    offer     = string
+    sku       = string
+    version   = string
   })
-  
+
 }

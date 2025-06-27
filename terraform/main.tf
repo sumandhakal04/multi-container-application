@@ -1,7 +1,7 @@
 module "azure_vm" {
   source = "./modules/azure-vm"
 
-  subscription_id = var.subscription_id
+  subscription_id               = var.subscription_id
   resource_group_name           = var.resource_group_name
   location                      = var.location
   azurerm_vnet_name             = var.azurerm_vnet_name
@@ -15,17 +15,17 @@ module "azure_vm" {
 
 
   azurerm_public_ip_name = var.azurerm_public_ip_name
-  azurerm_vm_name = var.azurerm_vm_name
-  azurerm_vm_size = var.azurerm_vm_size
-  azurerm_vm_nic_name = var.azurerm_vm_nic_name
+  azurerm_vm_name        = var.azurerm_vm_name
+  azurerm_vm_size        = var.azurerm_vm_size
+  azurerm_vm_nic_name    = var.azurerm_vm_nic_name
   admin_username         = var.admin_username
   public_key_path        = var.public_key_path
-  vnet_enable_public_ip = var.vnet_enable_public_ip
+  vnet_enable_public_ip  = var.vnet_enable_public_ip
 
   source_image_reference = {
     publisher = var.source_image_reference.publisher
-    offer = var.source_image_reference.offer
-    sku = var.source_image_reference.sku
-    version = var.source_image_reference.version
+    offer     = var.source_image_reference.offer
+    sku       = var.source_image_reference.sku
+    version   = var.source_image_reference.version
   }
 }
